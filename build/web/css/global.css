@@ -1,0 +1,81 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Nov 30, 2013, 11:14:15 PM
+    Author     : punker
+*/
+
+.cart-items { 
+    padding-right: 50px;
+}
+.table-wrapper {
+    background: black;
+    width: 850px;
+}
+.cart-items td, .cart-items th {
+    width: 200px;
+    text-align: center;
+    border-top: 1px solid black;
+    padding: 5px;
+}
+
+.cart-items th {
+    color: white;
+    background: black;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.coldiv {
+    width: 200px;
+    padding: 5px;
+    float: left;
+    text-align: center;
+}
+
+.coldiv input.qty {
+    margin: auto;
+    width: 25%;
+}
+
+.row-div, .checkout {
+    clear: both;
+}
+
+.items-wrapper {
+    
+   width: 850px;
+   margin-bottom: 0px !important;
+}
+
+.content-wrapper {
+    width: 850px;
+    margin: auto;
+}
+
+.totals {
+    width: 150px;
+    float: right;
+}
+
+.totals .panel-body {
+    padding: 5px;
+}
+
+.add-to-cart .qty {
+    width: 50px;
+    margin: auto;
+}
+
+.add-tocart-btn {
+    width: 100px;
+}
+
+.add-to-cart .row { 
+    
+    margin-top: 10px;
+    
+}

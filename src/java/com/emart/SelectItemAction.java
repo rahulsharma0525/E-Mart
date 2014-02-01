@@ -1,0 +1,115 @@
+package com.emart;
+
+import com.emart.controllers.CurrentItem;
+import com.pojos.ItemUtility;
+import com.pojos.Product;
+import java.io.FileOutputStream;
+import javax.inject.Inject;
+
+/**
+ *
+ * @author Kunal
+ */
+public class SelectItemAction {
+
+    @Inject
+    private CurrentItem cu;
+    
+    Product product;
+    int productId;
+    String productName;
+    String productDescr;
+    String filePath;
+
+    public FileOutputStream getFos() {
+        return fos;
+    }
+
+    public void setFos(FileOutputStream fos) {
+        this.fos = fos;
+    }
+    float cost;
+    String image;
+    FileOutputStream fos;
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
+
+    public float getCost() {
+        return cost;
+    }
+
+    public void setCost(float cost) {
+        this.cost = cost;
+    }
+
+    public String getProductDescr() {
+        return productDescr;
+    }
+
+    public Product getProduct() {
+        return product;
+    }
+
+    public void setProduct(Product product) {
+        this.product = product;
+    }
+
+    public void setProductDescr(String productDescr) {
+        this.productDescr = productDescr;
+    }
+
+    public int getProductId() {
+        return productId;
+    }
+
+    public void setProductId(int productId) {
+        this.productId = productId;
+    }
+
+    public String getProductName() {
+        return productName;
+    }
+
+    public void setProductName(String productName) {
+        this.productName = productName;
+    }
+
+    public String execute()  {
+   try{
+        ItemUtility iu = new ItemUtility();
+        productName = iu.getProductName(productId);
+        productDescr = iu.getProductDescription(productId);
+        image = iu.getProductImage(productId);
+        System.out.println("image description: " + image);
+        product = iu.getCompleteProduct(productId);
+        cu.setProd(product);
+//       
+//     
+//            File file = new File("Test1.gif");
+//            fos = new FileOutputStream(file); 
+//            fos.write(image);
+//            fos.close();
+//            System.out.println("fos: "+ fos);
+//            System.out.println(file.getAbsolutePath());
+//        }
+//       
+        cost = iu.getProductCost(productId);
+        System.out.println("cost is: " + cost);
+   }
+catch(Exception e){
+   }
+        if (productName != null && null != productDescr) {
+            return "success";
+        } else {
+            return "error";
+        }
+        
+         
+    }
+}
